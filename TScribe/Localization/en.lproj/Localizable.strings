@@ -1,0 +1,115 @@
+/* 
+  Localizable.strings
+  TScribe
+
+  Created by Alessio Rubicini on 13/06/21.
+  
+*/
+
+// MARK: - Tab bar
+
+"tabbar.transcriptions" = "Transcriptions";
+"tabbar.settings" = "Settings";
+
+// MARK: - Transcriptions list
+
+"registrationList.title" = "Transcriptions";
+"registrationList.search" = "Search transcription";
+"registrationList.inEvidence" = "In evidence";
+"registrationList.counter" = "%i transcriptions";
+"registrationList.all" = "All";
+"registrationList.delete" = "Delete";
+
+// MARK: - New transcription and transcription view
+
+"newRegistration.cancel" = "Cancel";
+"newRegistration.save" = "Save";
+"newRegistration.title" = "New transcription";
+"newRegistration.input.info" = "Info";
+"newRegistration.input.title" = "Title";
+"newRegistration.input.date" = "Date";
+"newRegistration.input.inEvidence" = "In evidence";
+"newRegistration.input.description" = "Description";
+
+"newRegistration.registrationControls" = "Registration controls";
+"newRegistration.controls" = "Controls";
+"newRegistration.actions" = "Transcription actions";
+"newRegistration.start" = "Start recording";
+"newRegistration.resume" = "Resume";
+"newRegistration.pause" = "Pause";
+"newRegistration.stop" = "Stop recording";
+"newRegistration.info" = "Recording info";
+"newRegistration.transcription" = "Transcription";
+
+"newRegistration.status.recording" = "Recording";
+"newRegistration.status.paused" = "Paused";
+"newRegistration.status.stopped" = "Not registering";
+
+"registration.actions" = "Actions";
+"registration.copy" = "Copy transcription";
+"registration.share" = "Share transcription";
+"registration.delete" = "Delete";
+"registration.pin" = "In evidence";
+"registration.unpin" = "Not in evidence";
+"registration.info" = "Transcription info";
+
+// MARK: - Edit
+
+"edit.edit" = "Edit";
+"edit.title" = "Edit transcription";
+"edit.save" = "Save";
+
+// MARK: - Settings
+
+"settings.title" = "Settings";
+"settings.preferences" = "Preferences";
+"settings.haptic" = "Haptic feedback";
+"settings.contact" = "Contact me";
+"settings.info" = "Info";
+"settings.version" = "Version";
+"settings.developer" = "Developer";
+"settings.permissions" = "Manage permissions";
+"settings.close" = "Close";
+
+"settings.privacy.title" = "Privacy policy and Terms of use";
+"settings.privacy" = "We do not collect your personal data and we do not use any user tracking or analysis solutions. We use your device's microphone and voice recognition exclusively for the app functionalities. Your transcripts are stored locally on your iPhone, they do not go outside of it and in fact no connection of any kind is required.";
+"settings.terms" = "The app has been...";
+
+// MARK: - Onboarding
+
+"onboarding.title" = "Welcome to TScribe!";
+"onboarding.description" = "TScribe is a simple application that, through the microphone of your device, picks up the words and transforms them directly into text.";
+
+"onboarding.feature1.title" = "Full controls";
+"onboarding.feature1" = "During speech detection, you have full control of the recording: you can pause it, end it or start over.";
+"onboarding.feature2.title" = "Accessible to everyone";
+"onboarding.feature2" = "The app is designed for people with disabilities and is therefore fully accessible and compatible with accessibility technologies.";
+"onboarding.feature3.title" = "Respect to your privacy";
+"onboarding.feature3" = "The application only asks for access to the microphone and transcripts are saved locally on your iPhone.";
+
+"onboarding.permits" = "For the app to function properly, you need to provide permissions to use the iPhone microphone and voice recognition. These features are used only within the app and only for the purposes of the app itself. ";
+"onboarding.microphone" = "Allow microphone use";
+"onboarding.speechRecognition" = "Allow speech recognition";
+"onboarding.button" = "Go to application";
+
+// MARK: - Alerts
+
+"alert.noMic.title" = "Microphone access denied";
+"alert.noMic.body" = "Check app permissions in your iPhone settings";
+
+"alert.noSpeech.title" = "Speech recognition access denied";
+"alert.noSpeech.body" = "Check app permissions in your iPhone settings";
+
+"alert.hapticEnabled" = "Haptic feedback has been enabled";
+"alert.hapticDisabled" = "Haptic feedback has been disabled";
+
+"alert.copied" = "Transcription copied";
+"alert.pinned" = "Transcript in evidence";
+"alert.notPinned" = "Transcript not in evidence";
+
+"alert.alert" = "Warning";
+"alert.close" = "Close";
+
+// MARK: - Accessibility
+
+"accessibility.transcription.options" = "Options";

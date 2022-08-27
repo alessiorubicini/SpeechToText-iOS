@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  TScribe
+
+  Created by Alessio Rubicini on 14/06/21.
+  
+*/
+
+NSMicrophoneUsageDescription = "The microphone is used for voice recording";
+NSSpeechRecognitionUsageDescription = "Speech recognition is used for the transformation of voice to text";

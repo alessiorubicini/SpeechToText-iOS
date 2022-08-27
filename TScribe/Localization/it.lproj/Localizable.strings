@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  TScribe
+
+  Created by Alessio Rubicini on 13/06/21.
+  
+*/
+
+// MARK: - Tab bar
+
+"tabbar.transcriptions" = "Trascrizioni";
+"tabbar.settings" = "Impostazioni";
+
+// MARK: - Transcriptions list
+
+"registrationList.title" = "Trascrizioni";
+"registrationList.search" = "Cerca trascrizioni";
+"registrationList.inEvidence" = "In evidenza";
+"registrationList.counter" = "%i trascrizioni";
+"registrationList.all" = "Tutte";
+"registrationList.delete" = "Elimina";
+
+// MARK: - New transcription and transcription view
+
+"newRegistration.cancel" = "Annulla";
+"newRegistration.save" = "Salva";
+"newRegistration.title" = "Nuova trascrizione";
+"newRegistration.input.info" = "Informazioni";
+"newRegistration.input.title" = "Titolo";
+"newRegistration.input.date" = "Data";
+"newRegistration.input.inEvidence" = "In evidenza";
+"newRegistration.input.description" = "Descrizione";
+
+"newRegistration.registrationControls" = "Controlli di registrazione";
+"newRegistration.controls" = "Controlli";
+"newRegistration.actions" = "Azioni trascrizione";
+"newRegistration.start" = "Avvia registrazione";
+"newRegistration.resume" = "Riprendi registrazione";
+"newRegistration.pause" = "Metti in pausa";
+"newRegistration.stop" = "Termina registrazione";
+"newRegistration.info" = "Informazioni registrazione";
+"newRegistration.transcription" = "Trascrizione";
+
+"newRegistration.status.recording" = "Registrazione in corso";
+"newRegistration.status.paused" = "Registrazione in pausa";
+"newRegistration.status.stopped" = "Registrazione non in corso";
+
+"registration.actions" = "Azioni";
+"registration.copy" = "Copia rascrizione";
+"registration.share" = "Condividi rascrizione";
+"registration.delete" = "Elimina";
+"registration.pin" = "In evidenza";
+"registration.unpin" = "Non in evidenza";
+"registration.info" = "Informazioni trascrizione";
+
+// MARK: - Edit
+
+"edit.edit" = "Modifica";
+"edit.title" = "Modifica trascrizione";
+"edit.save" = "Salva";
+
+// MARK: - Settings
+
+"settings.title" = "Impostazioni";
+"settings.preferences" = "Preferenze";
+"settings.haptic" = "Feedback aptico";
+"settings.contact" = "Contattami";
+"settings.info" = "Informazioni";
+"settings.version" = "Versione";
+"settings.developer" = "Sviluppatore";
+"settings.permissions" = "Gestici permessi";
+"settings.close" = "Chiudi";
+
+"settings.privacy.title" = "Privacy policy e termini di utilizzo";
+"settings.privacy" = "Non raccogliamo i tuoi dati personali e non utilizziamo alcuna soluzione di tracciamento o analisi utenti. Usufruiamo del microfono del tuo dispositivo e del riconoscimento vocale esclusivamente per le funzionalità dell'applicazione. Le trascrizioni sono salvate in locale sul tuo iPhone al sicuro, esse non escono al di fuori di esso e non è infatti richiesta alcuna connessione di alcun tipo.";
+"settings.terms" = "L'applicazione è stata";
+
+// MARK: - Onboarding
+
+"onboarding.title" = "Benvenuto/a su TScribe!";
+"onboarding.description" = "TScribe è una semplice applicazione che, tramite il microfono del tuo dispositivo, capta le parole e le trasforma direttamente in testo.";
+
+"onboarding.feature1.title" = "Pieni controlli";
+"onboarding.feature1" = "Durante il rilevamento delle parole hai il pieno controllo: puoi mettere in pausa, terminare oppure ricominciare da capo.";
+"onboarding.feature2.title" = "Accessibile a tutti";
+"onboarding.feature2" = "L'app è concepita per persone con disabilità ed è perciò pienamente accessibile e compatibile con le tecnologie di accessibilità di iPhone.";
+"onboarding.feature3.title" = "Rispetto alla tua privacy";
+"onboarding.feature3" = "Le trascrizioni sono salvate in locale sul tuo iPhone e l'app richiede solo i permessi necessari.";
+
+
+"onboarding.permits" = "Per il corretto funzionamento dell'app è necessario che tu fornisca i permessi per utilizzare il microfono dell'iPhone e il riconoscimento vocale. Queste funzionalità verranno sfruttate solo all'interno dell'app e solo per gli obiettivi dell'app stessa.";
+"onboarding.microphone" = "Permetti utilizzo microfono";
+"onboarding.speechRecognition" = "Permetti riconoscimento vocale";
+"onboarding.button" = "Vai all'applicazione";
+
+// MARK: - Alerts
+
+"alert.noMic.title" = "Accesso al microfono negato";
+"alert.noMic.body" = "Controlla i permessi dell'app nelle impotazioni del tuo iPhone";
+
+"alert.noSpeech.title" = "Accesso al riconoscimento vocale negato";
+"alert.noSpeech.body" = "Controlla i permessi dell'app nelle impotazioni del tuo iPhone";
+
+"alert.hapticEnabled" = "Il feedback aptico è stato abilitato";
+"alert.hapticDisabled" = "Il feedback aptico è stato disabilitato";
+
+"alert.copied" = "Trascrizione copiata";
+"alert.pinned" = "Trascrizione messa in evidenza";
+"alert.notPinned" = "Trascrizione non in evidenza";
+
+"alert.alert" = "Avviso";
+"alert.close" = "Chiudi";
+
+// MARK: - Accessibility
+
+"accessibility.transcription.options" = "Opzioni";
