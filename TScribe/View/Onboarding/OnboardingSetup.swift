@@ -33,7 +33,7 @@ struct OnboardingSetup: View {
                 self.askMicrophonePermission()
             }, label: {
                 Label("onboarding.microphone", systemImage: "mic.fill").frame(maxWidth: 300)
-                    .foregroundColor(microphonePermit == .denied ? .red : .primary)
+                    .foregroundColor(microphonePermit == .denied ? .red : .accentColor)
                 
             }).buttonStyle(.bordered)
                 .buttonStyle(.borderedProminent).controlSize(.large)
@@ -43,7 +43,7 @@ struct OnboardingSetup: View {
                 self.askSpeechRecognitionPermission()
             }, label: {
                 Label("onboarding.speechRecognition", systemImage: "waveform.and.mic").frame(maxWidth: 300)
-                    .foregroundColor(speechRecPermit == .denied ? .red : .primary)
+                    .foregroundColor(speechRecPermit == .denied ? .red : .accentColor)
                 
             }).buttonStyle(.bordered)
                 .buttonStyle(.borderedProminent).controlSize(.large)
@@ -72,6 +72,7 @@ struct OnboardingSetup: View {
             AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
                 if granted {
                     self.microphonePermit = .granted
+                    print("Microphone granted")
                 } else {
                     self.microphonePermit = .denied
                 }

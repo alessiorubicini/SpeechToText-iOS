@@ -49,6 +49,7 @@
 "registration.copy" = "Copy transcription";
 "registration.share" = "Share transcription";
 "registration.delete" = "Delete";
+"registration.resumeRecording" = "Resume recording";
 "registration.pin" = "In evidence";
 "registration.unpin" = "Not in evidence";
 "registration.info" = "Transcription info";

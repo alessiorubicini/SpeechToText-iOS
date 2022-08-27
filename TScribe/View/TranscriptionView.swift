@@ -6,20 +6,19 @@
 //
 
 import SwiftUI
-import AlertToast
 
 struct TranscriptionView: View {
     
     // MARK: - View properties
     @Environment(\.presentationMode) var presentationMode
     
+    @ObservedObject var data: AppData
     @Binding var record: Transcription
-    let saveAction: () -> Void
     
-    @State private var isEditing = false
-    @State private var alert = (false, "")
-    
-    @State private var showOptions = false
+    @State private var isEditing: Bool = false
+    @State private var alert: (Bool, String) = (false, "")
+    @State private var showOptions: Bool = false
+    @State private var resumeRecording: Bool = false
     
     // MARK: - View body
     
@@ -66,18 +65,16 @@ struct TranscriptionView: View {
                     }, label: {
                         Label("edit.edit", systemImage: "square.and.pencil")
                     }).foregroundColor(.primary)
-                        .accessibilityLabel(Text("edit.edit"))
+                    .accessibilityLabel(Text("edit.edit"))
                     
                     Button(action: {
-                        
                         self.record.inEvidence.toggle()
-
-                        self.saveAction()
-
+                        self.data.save()
                     }, label: {
-                        Label(record.inEvidence == true ? "registration.unpin" : "registration.pin", systemImage: record.inEvidence == true ? "pin.slash.fill" : "pin.fill")
-                    }).foregroundColor(.orange)
-                        .accessibilityLabel(Text(record.inEvidence == true ? "registration.unpin" : "registration.pin"))
+                        Label(record.inEvidence == true ? "registration.unpin" : "registration.pin",
+                              systemImage: record.inEvidence == true ? "pin.slash.fill" : "pin.fill")
+                    })
+                    .accessibilityLabel(Text(record.inEvidence == true ? "registration.unpin" : "registration.pin"))
                     
                     Button(role: .destructive, action: {
                         self.showOptions.toggle()
@@ -85,21 +82,28 @@ struct TranscriptionView: View {
                         Label("registration.delete", systemImage: "trash.fill")
                     })
                     .accessibilityLabel(Text("registration.delete"))
-                     
                     
-                    
-                    
+                    Button(action: {
+                        self.resumeRecording.toggle()
+                    }, label: {
+                        Label("registration.resumeRecording", systemImage: "mic.fill")
+                    })
+
                 } label: {
                     Image(systemName: "ellipsis.circle").renderingMode(.original).font(.title3).foregroundColor(.accentColor)
                 }
                 .accessibilityLabel(Text("accessibility.transcription.options"))
             }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: self.shareTranscription, label: {
+                    Image(systemName: "square.and.arrow.up")
+                }).accessibilityHint(Text("accessibility.share"))
+            }
         }
         
-        .navigationBarItems(trailing: HStack {
-            Button(action: self.shareTranscription, label: {
-                Image(systemName: "square.and.arrow.up")
-            }).accessibilityHint(Text("accessibility.share"))
+        .fullScreenCover(isPresented: $resumeRecording, content: {
+            RecordView(data: self.data, record: $record)
         })
         
         .fullScreenCover(isPresented: $isEditing) {
@@ -123,10 +127,6 @@ struct TranscriptionView: View {
             }
         }
         
-        .toast(isPresenting: $alert.0){
-            AlertToast(displayMode: .alert, type: .complete(.orange), title: NSLocalizedString(alert.1, comment: ""))
-        }
-        
     }
     
     private func shareTranscription() {
@@ -147,7 +147,7 @@ struct TranscriptionView: View {
     
     private func saveChanges() {
         // Save
-        self.saveAction()
+        self.data.save()
         
         // Generate haptic feedback
         notificationFeedback(type: .success)
@@ -176,7 +176,7 @@ struct InfoRow: View {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TranscriptionView(record: .constant(Transcription.mocks[0]), saveAction: {})
+            TranscriptionView(data: AppData(), record: .constant(Transcription.mocks[0]))
                 .navigationTitle(Transcription.mocks[0].title)
         }
     }

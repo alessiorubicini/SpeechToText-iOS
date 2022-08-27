@@ -12,40 +12,53 @@ struct SettingsView: View {
     // MARK: - View properties
     
     @AppStorage("hapticFeedback") private var haptic = true
+    @Environment(\.presentationMode) var presentationMode
     
     // MARK: - View body
     
     var body: some View {
-        List {
-            
-            Section(header: Text("settings.preferences")) {
-                Toggle("settings.haptic", isOn: $haptic)
-            }
-            
-            Section(header: Text("settings.info")) {
-                HStack {
-                    Text("settings.version")
-                    Spacer()
-                    Text("\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)")
+        NavigationView {
+            List {
+                
+                Section(header: Text("settings.preferences")) {
+                    Toggle("settings.haptic", isOn: $haptic)
                 }
                 
-                NavigationLink(destination: PrivacyTermsView().navigationTitle("Privacy policy")) {
-                    Label("settings.privacy.title", systemImage: "hand.raised.slash.fill")
+                Section(header: Text("settings.info")) {
+                    HStack {
+                        Text("settings.version")
+                        Spacer()
+                        Text("\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String)")
+                    }
+                    
+                    NavigationLink(destination: PrivacyTermsView().navigationTitle("Privacy policy")) {
+                        Label("settings.privacy.title", systemImage: "hand.raised.slash.fill")
+                    }
+                    
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    }, label: {
+                        Label("settings.permissions", systemImage: "lock.shield.fill")
+                    })
+                    
+                    Link(destination: URL(string: "http://alessiorubicini.altervista.org")!, label: {
+                        Label("settings.contact", systemImage: "link")
+                    }).accessibilityLabel(Text("settings.contact"))
                 }
                 
-                Button(action: {
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                }, label: {
-                    Label("settings.permissions", systemImage: "lock.shield.fill")
-                })
-                
-                Link(destination: URL(string: "http://alessiorubicini.altervista.org")!, label: {
-                    Label("settings.contact", systemImage: "link")
-                }).accessibilityLabel(Text("settings.contact"))
-            }
+            }.navigationTitle("settings.title")
             
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(role: .cancel, action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("settings.close")
+                        })
+                    }
+                }
         }
-
+        
     }
 }
 

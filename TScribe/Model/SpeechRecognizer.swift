@@ -50,11 +50,13 @@ struct SpeechRecognizer {
                 relay(speech, message: "Access denied")
                 return
             }
+            print("Access granted")
 
             assistant.audioEngine = AVAudioEngine()
             guard let audioEngine = assistant.audioEngine else {
                 fatalError("Unable to create audio engine")
             }
+            print("Created engine")
             assistant.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
             guard let recognitionRequest = assistant.recognitionRequest else {
                 fatalError("Unable to create request")
@@ -72,7 +74,7 @@ struct SpeechRecognizer {
                 inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
                     recognitionRequest.append(buffer)
                 }
-                
+                print("Preparing audio engine")
                 audioEngine.prepare()
                 
                 try audioEngine.start()

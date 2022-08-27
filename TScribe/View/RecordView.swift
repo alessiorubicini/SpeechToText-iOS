@@ -15,17 +15,15 @@ struct RecordView: View {
     
     // MARK: - View properties
     
-    @Environment(\.presentationMode) var presentationMode
-    @State private var alert = (false, "", "")
-    @State private var menu = 0
-    
     @ObservedObject var data: AppData
-    @State private var record = Transcription(title: "", text: "")
+    @Binding var record: Transcription
     
+    @Environment(\.presentationMode) var presentationMode
+    private let speechRecognizer = SpeechRecognizer()
+    
+    @State private var alert = (false, "", "")
     @State private var status: RecordingStatus = .stopped
     @State private var transcription = "Transcription goes here"
-    
-    @State private var speechRecognizer = SpeechRecognizer()
     
     // MARK: - View body
     
@@ -81,10 +79,10 @@ struct RecordView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
+                    Button(role: .cancel,  action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("newRegistration.cancel").fontWeight(.semibold).foregroundColor(.red)
+                        Text("newRegistration.cancel").fontWeight(.semibold)
                     }).disabled(status == .recording)
                 }
                 
@@ -115,7 +113,9 @@ struct RecordView: View {
     
     private func saveRecording() {
         // Add new transcription
-        self.data.transcriptions.append(self.record)
+        if !data.transcriptions.contains(where: {$0.id == record.id}) {
+            self.data.transcriptions.append(self.record)
+        }
         
         // Save data
         self.data.save()
@@ -187,6 +187,6 @@ struct RecordView: View {
 
 struct NewRegistrationSheet_Previews: PreviewProvider {
     static var previews: some View {
-        RecordView(data: AppData())
+        RecordView(data: AppData(), record: .constant(Transcription(title: "", text: "")))
     }
 }

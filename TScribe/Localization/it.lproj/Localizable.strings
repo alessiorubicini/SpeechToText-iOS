@@ -38,6 +38,7 @@
 "newRegistration.resume" = "Riprendi registrazione";
 "newRegistration.pause" = "Metti in pausa";
 "newRegistration.stop" = "Termina registrazione";
+"registration.resumeRecording" = "Riprendi";
 "newRegistration.info" = "Informazioni registrazione";
 "newRegistration.transcription" = "Trascrizione";
 

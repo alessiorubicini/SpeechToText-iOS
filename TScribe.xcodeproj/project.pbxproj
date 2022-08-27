@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF2DE376267F1DED0061BF33 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = CF2DE375267F1DED0061BF33 /* AlertToast */; };
 		CF5E89FA2677223400DEBA28 /* RecordingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5E89F92677223400DEBA28 /* RecordingStatus.swift */; };
 		CF78811D2677DA1400194F47 /* OnboardingIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF78811C2677DA1400194F47 /* OnboardingIntroduction.swift */; };
 		CF7881212677DA8100194F47 /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7881202677DA8100194F47 /* OnboardingSetup.swift */; };
@@ -36,6 +35,7 @@
 		CF5E89F92677223400DEBA28 /* RecordingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingStatus.swift; sourceTree = "<group>"; };
 		CF78811C2677DA1400194F47 /* OnboardingIntroduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroduction.swift; sourceTree = "<group>"; };
 		CF7881202677DA8100194F47 /* OnboardingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSetup.swift; sourceTree = "<group>"; };
+		CF7CA15028BA1B7F004B25C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TScribe/Info.plist; sourceTree = SOURCE_ROOT; };
 		CF7E1FDD267F1149008E57A4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CF7EA532267666700031A817 /* TScribe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TScribe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7EA535267666700031A817 /* TScribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TScribe.swift; sourceTree = "<group>"; };
@@ -49,7 +49,6 @@
 		CF7EA54F26766BAA0031A817 /* TranscriptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionRow.swift; sourceTree = "<group>"; };
 		CF7EA55126766D080031A817 /* TranscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionView.swift; sourceTree = "<group>"; };
 		CF7EA5532676749A0031A817 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
-		CF838227267789EA0085F323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CF83822B26778A3A0085F323 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF83822D26778A3B0085F323 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF83822F26778BE30085F323 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -66,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2DE376267F1DED0061BF33 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				CF7EA535267666700031A817 /* TScribe.swift */,
-				CF838227267789EA0085F323 /* Info.plist */,
+				CF7CA15028BA1B7F004B25C6 /* Info.plist */,
 				CF7EA539267666710031A817 /* Assets.xcassets */,
+				CFCCE9822676886F00A9D9ED /* Localization */,
 				CF7EA5432676667E0031A817 /* Model */,
 				CF7EA54A2676679E0031A817 /* View */,
 				CF26CC3426787D3100173D90 /* Logic */,
-				CFCCE9822676886F00A9D9ED /* Localization */,
 				CF7EA53B267666710031A817 /* Preview Content */,
 			);
 			path = TScribe;
@@ -184,7 +182,6 @@
 			);
 			name = TScribe;
 			packageProductDependencies = (
-				CF2DE375267F1DED0061BF33 /* AlertToast */,
 			);
 			productName = YourEars;
 			productReference = CF7EA532267666700031A817 /* TScribe.app */;
@@ -216,7 +213,6 @@
 			);
 			mainGroup = CF7EA529267666700031A817;
 			packageReferences = (
-				CF2DE374267F1DED0061BF33 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = CF7EA533267666700031A817 /* Products */;
 			projectDirPath = "";
@@ -277,7 +273,8 @@
 				CF83822D26778A3B0085F323 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
+			path = TScribe/Localization;
+			sourceTree = SOURCE_ROOT;
 		};
 		CFCCE9872676887F00A9D9ED /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -427,8 +424,6 @@
 				INFOPLIST_KEY_CFBundleName = YourEars;
 				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = 6.0;
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = 6.0;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -467,8 +462,6 @@
 				INFOPLIST_KEY_CFBundleName = YourEars;
 				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = 6.0;
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = 6.0;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -511,25 +504,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CF2DE374267F1DED0061BF33 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/elai950/AlertToast";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CF2DE375267F1DED0061BF33 /* AlertToast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CF2DE374267F1DED0061BF33 /* XCRemoteSwiftPackageReference "AlertToast" */;
-			productName = AlertToast;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF7EA52A267666700031A817 /* Project object */;
 }

@@ -17,6 +17,8 @@ struct TranscriptionsList: View {
     @State private var showNewTranscriptionView = false
     @State private var showSettings = false
     
+    @State private var transcription = Transcription(title: "", text: "")
+    
     @Environment(\.editMode) private var editMode
     
     // MARK: - View body
@@ -31,7 +33,7 @@ struct TranscriptionsList: View {
                     Section(header: Text("registrationList.inEvidence")) {
                         ForEach($data.transcriptions.filter({$0.inEvidence.wrappedValue == true})) { $rec in
                             
-                            NavigationLink(destination: TranscriptionView(record: $rec, saveAction: data.save).navigationTitle(rec.title)) {
+                            NavigationLink(destination: TranscriptionView(data: data, record: $rec).navigationTitle(rec.title)) {
                                 TranscriptionRow(record: rec)
                             }
                             
@@ -64,7 +66,7 @@ struct TranscriptionsList: View {
                     Section(header: Text("registrationList.all")) {
                         ForEach($data.transcriptions.filter({$0.inEvidence.wrappedValue == false})) { $rec in
                             
-                            NavigationLink(destination: TranscriptionView(record: $rec, saveAction: data.save).navigationTitle(rec.title)) {
+                            NavigationLink(destination: TranscriptionView(data: data, record: $rec).navigationTitle(rec.title)) {
                                 TranscriptionRow(record: rec)
                             }
                             
@@ -131,22 +133,14 @@ struct TranscriptionsList: View {
             }*/
             
             .fullScreenCover(isPresented: $showNewTranscriptionView) {
-                RecordView(data: self.data)
+                RecordView(data: self.data, record: $transcription)
+                    .onDisappear {
+                        self.transcription = Transcription(title: "", text: "")
+                    }
             }
             
             .sheet(isPresented: $showSettings) {
-                NavigationView {
-                    SettingsView()
-                        .navigationTitle("settings.title")
-                        .navigationBarItems(leading: HStack {
-                            Button(action: {
-                                self.showSettings.toggle()
-                            }, label: {
-                                Text("settings.close").fontWeight(.semibold).foregroundColor(.red)
-                            })
-                        })
-                    
-                }
+                SettingsView()
             }
             
             .navigationBarTitle("registrationList.title")
