@@ -32,8 +32,11 @@ class AppData: ObservableObject {
     // Save app data as JSON to local memory
     func save() {
         DispatchQueue.global(qos: .background).async { [weak self] in
+            
             guard let transcriptions = self?.transcriptions else { fatalError("Self out of scope") }
+            
             guard let data = try? JSONEncoder().encode(transcriptions) else { fatalError("Error encoding data") }
+            
             do {
                 let outfile = Self.fileURL
                 try data.write(to: outfile)
@@ -44,8 +47,9 @@ class AppData: ObservableObject {
         }
     }
     
-    // Load data from local memory to app
+    // Load data from local memory
     func load() {
+        
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let data = try? Data(contentsOf: Self.fileURL) else {
                 return
@@ -59,6 +63,7 @@ class AppData: ObservableObject {
                 self?.transcriptions = transcriptions
             }
         }
+        
     }
     
 }

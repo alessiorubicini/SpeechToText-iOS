@@ -40,7 +40,9 @@ struct TranscriptionView: View {
             }
             
             
-            Section(header: Text("newRegistration.transcription")) {
+            Section(header: Text("newRegistration.transcription"),
+                    footer: Text("registration.tapToEdit")) {
+                
                 TextEditor(text: $record.text).multilineTextAlignment(.leading)
                     .frame(height: 300)
                     .accessibilityElement(children: .ignore)
@@ -50,6 +52,7 @@ struct TranscriptionView: View {
         }
         
         .toolbar {
+            
             ToolbarItemGroup(placement: .bottomBar) {
                 
                 Button(action: self.pastContentInClipboard, label: {
@@ -76,23 +79,24 @@ struct TranscriptionView: View {
                     })
                     .accessibilityLabel(Text(record.inEvidence == true ? "registration.unpin" : "registration.pin"))
                     
+                    Button(action: {
+                        self.resumeRecording.toggle()
+                    }, label: {
+                        Label("registration.resumeRecording", systemImage: "mic.fill")
+                    })
+                    
                     Button(role: .destructive, action: {
                         self.showOptions.toggle()
                     }, label: {
                         Label("registration.delete", systemImage: "trash.fill")
                     })
                     .accessibilityLabel(Text("registration.delete"))
-                    
-                    Button(action: {
-                        self.resumeRecording.toggle()
-                    }, label: {
-                        Label("registration.resumeRecording", systemImage: "mic.fill")
-                    })
 
                 } label: {
                     Image(systemName: "ellipsis.circle").renderingMode(.original).font(.title3).foregroundColor(.accentColor)
                 }
                 .accessibilityLabel(Text("accessibility.transcription.options"))
+                            
             }
             
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -103,7 +107,7 @@ struct TranscriptionView: View {
         }
         
         .fullScreenCover(isPresented: $resumeRecording, content: {
-            RecordView(data: self.data, record: $record)
+            RecordingView(data: self.data, record: $record)
         })
         
         .fullScreenCover(isPresented: $isEditing) {
@@ -125,6 +129,10 @@ struct TranscriptionView: View {
                         })
                     })
             }
+        }
+        
+        .alert("alert.copied", isPresented: $alert.0) {
+            Button("alert.close", role: .cancel) { }
         }
         
     }

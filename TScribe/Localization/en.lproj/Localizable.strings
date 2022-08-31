@@ -53,6 +53,7 @@
 "registration.pin" = "In evidence";
 "registration.unpin" = "Not in evidence";
 "registration.info" = "Transcription info";
+"registration.tapToEdit" = "Tap on the text to edit.";
 
 // MARK: - Edit
 
@@ -78,7 +79,7 @@
 
 // MARK: - Onboarding
 
-"onboarding.title" = "Welcome to TScribe!";
+"onboarding.title" = "Welcome!";
 "onboarding.description" = "TScribe is a simple application that, through the microphone of your device, picks up the words and transforms them directly into text.";
 
 "onboarding.feature1.title" = "Full controls";

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Transcription: Identifiable, Codable {
+struct Transcription: Identifiable, Codable, Hashable {
     
     let id: UUID
     var title: String
@@ -24,14 +24,11 @@ struct Transcription: Identifiable, Codable {
         self.inEvidence = false
     }
     
-    
 }
 
 extension Transcription {
-    
     static let mocks = [
         Transcription(title: "Lezione italiano", text: "Ciao ragazzi"),
         Transcription(title: "Discussione cittadinanza", text: "Ciao ragazzi")
     ]
-    
 }

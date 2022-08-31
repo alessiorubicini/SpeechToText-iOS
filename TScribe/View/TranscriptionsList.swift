@@ -13,10 +13,8 @@ struct TranscriptionsList: View {
     
     @ObservedObject var data: AppData
     
-    @State private var searchedText = ""
     @State private var showNewTranscriptionView = false
     @State private var showSettings = false
-    
     @State private var transcription = Transcription(title: "", text: "")
     
     @Environment(\.editMode) private var editMode
@@ -25,6 +23,7 @@ struct TranscriptionsList: View {
     
     @ViewBuilder
     var body: some View {
+        
         NavigationView {
             
             List {
@@ -96,6 +95,8 @@ struct TranscriptionsList: View {
             }
             
             .toolbar {
+                
+                // Bottom bar
                 ToolbarItemGroup(placement: .bottomBar) {
                     
                     Button(action: {
@@ -119,21 +120,15 @@ struct TranscriptionsList: View {
                     .accessibilityLabel(Text("newRegistration.title"))
                     
                 }
+                
+                // Edit button
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
             }
             
-            // Search bar
-            /*
-            .searchable(text: "registrationList.search", placement: $searchedText) {
-                
-                // Search result
-                ForEach($data.transcriptions.filter({$0.title.wrappedValue.contains(searchedText)})) { $rec in
-                    Text(rec.title).searchCompletion(rec.title)
-                }
-                
-            }*/
-            
             .fullScreenCover(isPresented: $showNewTranscriptionView) {
-                RecordView(data: self.data, record: $transcription)
+                RecordingView(data: self.data, record: $transcription)
                     .onDisappear {
                         self.transcription = Transcription(title: "", text: "")
                     }
@@ -144,10 +139,7 @@ struct TranscriptionsList: View {
             }
             
             .navigationBarTitle("registrationList.title")
-            .navigationBarItems(trailing: HStack {
-                EditButton()
-            })
-
+            
         }
     }
     
@@ -167,11 +159,11 @@ struct TranscriptionsList: View {
         self.data.save()
     }
     
-    
 }
 
 struct RegistrationsListView_Previews: PreviewProvider {
     static var previews: some View {
         TranscriptionsList(data: AppData(debugData: Transcription.mocks))
+            //.previewInterfaceOrientation(.landscapeLeft)
     }
 }

@@ -11,7 +11,7 @@ import AVFAudio
 import AVFoundation
 import Speech
 
-struct RecordView: View {
+struct RecordingView: View {
     
     // MARK: - View properties
     
@@ -185,8 +185,8 @@ struct RecordView: View {
 
 }
 
-struct NewRegistrationSheet_Previews: PreviewProvider {
+struct RecordingView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordView(data: AppData(), record: .constant(Transcription(title: "", text: "")))
+        RecordingView(data: AppData(), record: .constant(Transcription(title: "", text: "")))
     }
 }

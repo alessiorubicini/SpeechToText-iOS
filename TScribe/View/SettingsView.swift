@@ -81,8 +81,6 @@ struct PrivacyTermsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            SettingsView().navigationTitle("Settings")
-        }
+        SettingsView()
     }
 }

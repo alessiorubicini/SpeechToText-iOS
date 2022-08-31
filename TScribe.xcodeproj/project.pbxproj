@@ -15,13 +15,12 @@
 		CF7EA53A267666710031A817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7EA539267666710031A817 /* Assets.xcassets */; };
 		CF7EA53D267666710031A817 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF7EA53C267666710031A817 /* Preview Assets.xcassets */; };
 		CF7EA545267666CE0031A817 /* Transcription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA544267666CE0031A817 /* Transcription.swift */; };
-		CF7EA547267667580031A817 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA546267667580031A817 /* Color+Codable.swift */; };
 		CF7EA5492676676C0031A817 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA5482676676C0031A817 /* SpeechRecognizer.swift */; };
 		CF7EA54C267667AD0031A817 /* TranscriptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA54B267667AD0031A817 /* TranscriptionsList.swift */; };
 		CF7EA54E267667FB0031A817 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA54D267667FB0031A817 /* AppData.swift */; };
 		CF7EA55026766BAA0031A817 /* TranscriptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA54F26766BAA0031A817 /* TranscriptionRow.swift */; };
 		CF7EA55226766D080031A817 /* TranscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA55126766D080031A817 /* TranscriptionView.swift */; };
-		CF7EA5542676749A0031A817 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA5532676749A0031A817 /* RecordView.swift */; };
+		CF7EA5542676749A0031A817 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA5532676749A0031A817 /* RecordingView.swift */; };
 		CF83822A26778A3A0085F323 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF83822C26778A3A0085F323 /* InfoPlist.strings */; };
 		CF83823026778BE30085F323 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83822F26778BE30085F323 /* OnboardingView.swift */; };
 		CF84FBD92682097100A7B433 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF84FBD82682097100A7B433 /* SettingsView.swift */; };
@@ -42,13 +41,12 @@
 		CF7EA539267666710031A817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF7EA53C267666710031A817 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF7EA544267666CE0031A817 /* Transcription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcription.swift; sourceTree = "<group>"; };
-		CF7EA546267667580031A817 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		CF7EA5482676676C0031A817 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		CF7EA54B267667AD0031A817 /* TranscriptionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionsList.swift; sourceTree = "<group>"; };
 		CF7EA54D267667FB0031A817 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		CF7EA54F26766BAA0031A817 /* TranscriptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionRow.swift; sourceTree = "<group>"; };
 		CF7EA55126766D080031A817 /* TranscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionView.swift; sourceTree = "<group>"; };
-		CF7EA5532676749A0031A817 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		CF7EA5532676749A0031A817 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		CF83822B26778A3A0085F323 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF83822D26778A3B0085F323 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF83822F26778BE30085F323 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -103,8 +101,8 @@
 				CF7EA539267666710031A817 /* Assets.xcassets */,
 				CFCCE9822676886F00A9D9ED /* Localization */,
 				CF7EA5432676667E0031A817 /* Model */,
-				CF7EA54A2676679E0031A817 /* View */,
 				CF26CC3426787D3100173D90 /* Logic */,
+				CF7EA54A2676679E0031A817 /* View */,
 				CF7EA53B267666710031A817 /* Preview Content */,
 			);
 			path = TScribe;
@@ -124,7 +122,6 @@
 				CF7EA54D267667FB0031A817 /* AppData.swift */,
 				CF7EA544267666CE0031A817 /* Transcription.swift */,
 				CF7EA5482676676C0031A817 /* SpeechRecognizer.swift */,
-				CF7EA546267667580031A817 /* Color+Codable.swift */,
 				CF5E89F92677223400DEBA28 /* RecordingStatus.swift */,
 				CFA010B7267F06850059A18F /* Onchange+Binding.swift */,
 			);
@@ -137,7 +134,7 @@
 				CF7EA54B267667AD0031A817 /* TranscriptionsList.swift */,
 				CF7EA54F26766BAA0031A817 /* TranscriptionRow.swift */,
 				CF7EA55126766D080031A817 /* TranscriptionView.swift */,
-				CF7EA5532676749A0031A817 /* RecordView.swift */,
+				CF7EA5532676749A0031A817 /* RecordingView.swift */,
 				CF7E1FDD267F1149008E57A4 /* EditView.swift */,
 				CF84FBD82682097100A7B433 /* SettingsView.swift */,
 				CFEEF9A42677A40B00D70351 /* Onboarding */,
@@ -250,10 +247,9 @@
 				CF7EA545267666CE0031A817 /* Transcription.swift in Sources */,
 				CF5E89FA2677223400DEBA28 /* RecordingStatus.swift in Sources */,
 				CFCCE9812676880300A9D9ED /* HapticFeedback.swift in Sources */,
-				CF7EA547267667580031A817 /* Color+Codable.swift in Sources */,
 				CF78811D2677DA1400194F47 /* OnboardingIntroduction.swift in Sources */,
 				CF7EA536267666700031A817 /* TScribe.swift in Sources */,
-				CF7EA5542676749A0031A817 /* RecordView.swift in Sources */,
+				CF7EA5542676749A0031A817 /* RecordingView.swift in Sources */,
 				CFEEF9A62677A41800D70351 /* OnboardingDetail.swift in Sources */,
 				CF7E1FDE267F1149008E57A4 /* EditView.swift in Sources */,
 				CF7EA55026766BAA0031A817 /* TranscriptionRow.swift in Sources */,

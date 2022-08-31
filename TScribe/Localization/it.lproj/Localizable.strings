@@ -38,7 +38,7 @@
 "newRegistration.resume" = "Riprendi registrazione";
 "newRegistration.pause" = "Metti in pausa";
 "newRegistration.stop" = "Termina registrazione";
-"registration.resumeRecording" = "Riprendi";
+"registration.resumeRecording" = "Continua";
 "newRegistration.info" = "Informazioni registrazione";
 "newRegistration.transcription" = "Trascrizione";
 
@@ -53,6 +53,7 @@
 "registration.pin" = "In evidenza";
 "registration.unpin" = "Non in evidenza";
 "registration.info" = "Informazioni trascrizione";
+"registration.tapToEdit" = "Tocca il testo per modificarlo.";
 
 // MARK: - Edit
 
@@ -78,7 +79,7 @@
 
 // MARK: - Onboarding
 
-"onboarding.title" = "Benvenuto/a su TScribe!";
+"onboarding.title" = "Benvenut*!";
 "onboarding.description" = "TScribe è una semplice applicazione che, tramite il microfono del tuo dispositivo, capta le parole e le trasforma direttamente in testo.";
 
 "onboarding.feature1.title" = "Pieni controlli";

@@ -17,6 +17,7 @@ struct TranscriptionRow: View {
             VStack(alignment: .leading) {
                 Text(record.title).fontWeight(.semibold)
                 Text(record.date, style: .date).foregroundColor(.secondary)
+                    //.padding(.top, 1)
             }
             
             Spacer()
